@@ -8,6 +8,12 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+        <!-- Basic code to test that data is  -->
+        <StackPanel x:Name="ShowWeather" Background="Aquamarine">
+            <Button Content="Get Weather" Click="Button_Click"/>
+            <!-- This textblock will print  -->
+            <TextBlock Name="ResultTextBlock" />
+        </StackPanel>
+        
     </Grid>
 </Page>

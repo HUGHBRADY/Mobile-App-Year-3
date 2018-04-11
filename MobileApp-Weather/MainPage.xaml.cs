@@ -26,5 +26,10 @@ namespace MobileApp_Weather
         {
             this.InitializeComponent();
         }
+
+        private void Button_Click()
+        {
+
+        }
     }
 }
