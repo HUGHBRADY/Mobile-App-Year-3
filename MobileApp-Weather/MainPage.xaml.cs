@@ -27,9 +27,10 @@ namespace MobileApp_Weather
             this.InitializeComponent();
         }
 
-        private void Button_Click()
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            RootObject myWeather = await WeatherData.GetWeather(57.9, -7.6);
+            ResultTextBlock.Text = myWeather.name + " - " + myWeather.main.temp + " - " + myWeather.weather[0].description;
         }
     }
 }

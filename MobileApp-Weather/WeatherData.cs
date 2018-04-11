@@ -1,16 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Runtime.Serialization;
+using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace MobileApp_Weather
 {
     // This class will be used to store the data pulled from openweathermaps.org
-    class WeatherProxy
+    class WeatherData
     {
+        public async static Task<RootObject> GetWeather(double lat, double lon)
+        {
+            var http = new HttpClient();
+            var response = await http.GetAsync("http://samples.openweathermap.org/data/2.5/weather?lat=54&lon=-7&appid=e6e967a3f91d4f728894fc3e5eff48c3");
+            var result = await response.Content.ReadAsStringAsync();
+            var serializer = new DataContractJsonSerializer(typeof(RootObject));
 
+            var ms = new MemoryStream(Encoding.UTF8.GetBytes(result));
+            var data = (RootObject)serializer.ReadObject(ms);
+
+            return data;
+        }
     }
 
     [DataContract]
