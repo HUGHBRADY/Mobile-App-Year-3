@@ -1,0 +1,27 @@
+﻿<Page
+    x:Class="MobileApp_Weather.CurrentLoc"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MobileApp_Weather"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Loaded="Page_Loaded">
+
+    <!-- Basic code to check that data is being pulled from openweathermaps.org's API -->
+    <StackPanel x:Name="ShowWeather" Background="Aquamarine" Height="auto" Width="auto">
+
+        <!-- Banner -->
+        <StackPanel x:Name="Banner" Height="130" Background="Aqua" VerticalAlignment="Top">
+            <AppBarButton x:Name="Home" Icon="Back" Width="60"  Click="AppBarButton_Click"/>
+            <TextBlock x:Name="Header" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="72" FontWeight="Bold" Height="130" Margin="216,0"/>
+        </StackPanel>
+
+        <!-- Icon that matches weather description -->
+        <Image x:Name="Icon" Height="100" Width="100" HorizontalAlignment="Center"/>
+
+        <!-- This textblock will print the location, temperature and weather -->
+        <TextBlock x:Name="TempTextBlock" HorizontalAlignment="Center" FontSize="60" Foreground="White" />
+        <TextBlock x:Name="CityTextBlock" HorizontalAlignment="Center" FontSize="36" Foreground="White" />
+        <TextBlock x:Name="DescTextBlock" HorizontalAlignment="Center" FontSize="36" Foreground="White" />
+    </StackPanel>
+</Page>
