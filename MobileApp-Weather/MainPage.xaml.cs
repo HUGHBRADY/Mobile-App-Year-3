@@ -31,9 +31,7 @@ namespace MobileApp_Weather
         {
             var position = await LocationManager.GetPosition();
 
-            RootObject myWeather = await WeatherData.GetWeather(
-                position.Coordinate.Point.Position.Latitude, 
-                position.Coordinate.Point.Position.Longitude);
+            RootObject myWeather = await WeatherData.GetWeather(position.Coordinate.Point.Position.Latitude, position.Coordinate.Point.Position.Longitude);
             ResultTextBlock.Text = myWeather.name + " - " + myWeather.main.temp + " - " + myWeather.weather[0].description;
         }
     }
