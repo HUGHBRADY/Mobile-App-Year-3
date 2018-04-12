@@ -109,6 +109,24 @@
     <None Include="MobileApp-Weather_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Icons\01d.png" />
+    <Content Include="Assets\Icons\01n.png" />
+    <Content Include="Assets\Icons\02d.png" />
+    <Content Include="Assets\Icons\02n.png" />
+    <Content Include="Assets\Icons\03d.png" />
+    <Content Include="Assets\Icons\03n.png" />
+    <Content Include="Assets\Icons\04d.png" />
+    <Content Include="Assets\Icons\04n.png" />
+    <Content Include="Assets\Icons\09d.png" />
+    <Content Include="Assets\Icons\09n.png" />
+    <Content Include="Assets\Icons\10d.png" />
+    <Content Include="Assets\Icons\10n.png" />
+    <Content Include="Assets\Icons\11d.png" />
+    <Content Include="Assets\Icons\11n.png" />
+    <Content Include="Assets\Icons\13d.png" />
+    <Content Include="Assets\Icons\13n.png" />
+    <Content Include="Assets\Icons\50d.png" />
+    <Content Include="Assets\Icons\50n.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -128,6 +146,7 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

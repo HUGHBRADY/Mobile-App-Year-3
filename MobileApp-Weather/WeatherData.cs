@@ -16,7 +16,7 @@ namespace MobileApp_Weather
         public async static Task<RootObject> GetWeather(double lat, double lon)
         {
             var http = new HttpClient();
-            var url = String.Format("http://api.openweathermap.org/data/2.5/weather?lat={0}&lon={1}&appid=d05d62a94aeda33440f331b6b75f9611", lat, lon);
+            var url = String.Format("http://api.openweathermap.org/data/2.5/weather?lat={0}&lon={1}&appid=d05d62a94aeda33440f331b6b75f9611&units=metric", lat, lon);
             var response = await http.GetAsync(url);
             var result = await response.Content.ReadAsStringAsync();
             var serializer = new DataContractJsonSerializer(typeof(RootObject));

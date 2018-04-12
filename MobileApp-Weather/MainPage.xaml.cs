@@ -11,15 +11,11 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
-
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace MobileApp_Weather
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class MainPage : Page
     {
         public MainPage()
@@ -30,8 +26,14 @@ namespace MobileApp_Weather
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
             var position = await LocationManager.GetPosition();
-
+            // Get the weather at the user's location
             RootObject myWeather = await WeatherData.GetWeather(position.Coordinate.Point.Position.Latitude, position.Coordinate.Point.Position.Longitude);
+           
+            // Icons taken from https://openweathermap.org/weather-conditions
+            string icon = String.Format("ms-appx:///Assets/Icons/{0}.png", myWeather.weather[0].icon);
+            Icon.Source = new BitmapImage(new Uri(icon, UriKind.Absolute));
+
+            // Print city name, temperature and weather description from WeatherData.cs
             ResultTextBlock.Text = myWeather.name + " - " + myWeather.main.temp + " - " + myWeather.weather[0].description;
         }
     }

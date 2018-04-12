@@ -8,11 +8,15 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <!-- Basic code to test that data is  -->
+        <!-- Basic code to check that data is being pulled from openweathermaps.org's API -->
         <StackPanel x:Name="ShowWeather" Background="Aquamarine">
             <Button Content="Get Weather" Click="Button_Click"/>
-            <!-- This textblock will print  -->
+        
+            <!-- This textblock will print the location, temperature and weather -->
             <TextBlock Name="ResultTextBlock" />
+
+            <!-- Icon that matches weather description -->
+            <Image Name="Icon" Height="100" Width="100"/>
         </StackPanel>
     </Grid>
 </Page>
