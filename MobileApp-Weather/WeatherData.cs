@@ -16,7 +16,7 @@ namespace MobileApp_Weather
         public async static Task<RootObject> GetWeather(double lat, double lon)
         {
             var http = new HttpClient();
-            var response = await http.GetAsync("http://samples.openweathermap.org/data/2.5/weather?lat=54&lon=-7&appid=e6e967a3f91d4f728894fc3e5eff48c3");
+            var response = await http.GetAsync("http://api.openweathermap.org/data/2.5/weather?lat=53.98&lon=-7.36&appid=d05d62a94aeda33440f331b6b75f9611");
             var result = await response.Content.ReadAsStringAsync();
             var serializer = new DataContractJsonSerializer(typeof(RootObject));
 
@@ -74,7 +74,7 @@ namespace MobileApp_Weather
         [DataMember]
         public double speed { get; set; }
         [DataMember]
-        public int deg { get; set; }
+        public double deg { get; set; }
     }
 
     [DataContract]

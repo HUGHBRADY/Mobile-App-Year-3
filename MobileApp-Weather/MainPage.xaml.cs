@@ -29,7 +29,11 @@ namespace MobileApp_Weather
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            RootObject myWeather = await WeatherData.GetWeather(57.9, -7.6);
+            var position = await LocationManager.GetPosition();
+
+            RootObject myWeather = await WeatherData.GetWeather(
+                position.Coordinate.Point.Position.Latitude, 
+                position.Coordinate.Point.Position.Longitude);
             ResultTextBlock.Text = myWeather.name + " - " + myWeather.main.temp + " - " + myWeather.weather[0].description;
         }
     }
