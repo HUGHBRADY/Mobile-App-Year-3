@@ -21,14 +21,17 @@ namespace MobileApp_Weather
         public MainPage()
         {
             this.InitializeComponent();
+
+            // Banner
+            Header.Text = "Rain or Shine";
         }
 
-        private async void Button_Click(object sender, RoutedEventArgs e)
+        private async void Current_Location(object sender, RoutedEventArgs e)
         {
             var position = await LocationManager.GetPosition();
             // Get the weather at the user's location
             RootObject myWeather = await WeatherData.GetWeather(position.Coordinate.Point.Position.Latitude, position.Coordinate.Point.Position.Longitude);
-           
+
             // Icons taken from https://openweathermap.org/weather-conditions
             string icon = String.Format("ms-appx:///Assets/Icons/{0}.png", myWeather.weather[0].icon);
             Icon.Source = new BitmapImage(new Uri(icon, UriKind.Absolute));

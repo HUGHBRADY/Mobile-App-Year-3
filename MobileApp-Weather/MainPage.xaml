@@ -7,16 +7,20 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <!-- Basic code to check that data is being pulled from openweathermaps.org's API -->
-        <StackPanel x:Name="ShowWeather" Background="Aquamarine">
-            <Button Content="Get Weather" Click="Button_Click"/>
-        
-            <!-- This textblock will print the location, temperature and weather -->
-            <TextBlock Name="ResultTextBlock" />
+    <!-- Basic code to check that data is being pulled from openweathermaps.org's API -->
+    <StackPanel x:Name="ShowWeather" Background="Aquamarine" Height="auto" Width="auto">
 
-            <!-- Icon that matches weather description -->
-            <Image Name="Icon" Height="100" Width="100"/>
+        <!-- Icon that matches weather description -->
+        <StackPanel x:Name="Banner" Height="100" Background="Aqua">
+            <TextBlock x:Name="Header" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="56" FontWeight="Bold" Height="100" Margin="216,0"/>
         </StackPanel>
-    </Grid>
+
+        <!-- Icon that matches weather description -->
+        <Image x:Name="Icon" Height="100" Width="100" HorizontalAlignment="Center"/>
+
+        <!-- This textblock will print the location, temperature and weather -->
+        <TextBlock x:Name="ResultTextBlock" HorizontalAlignment="Center" FontSize="30" Foreground="White" />
+        <Button Content="Get Weather" Click="Current_Location" HorizontalAlignment="Center" VerticalAlignment="Center" Height="60" Width="180"/>
+
+    </StackPanel>
 </Page>
