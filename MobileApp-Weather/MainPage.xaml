@@ -11,16 +11,21 @@
     <StackPanel x:Name="ShowWeather" Background="Aquamarine" Height="auto" Width="auto">
 
         <!-- Icon that matches weather description -->
-        <StackPanel x:Name="Banner" Height="100" Background="Aqua">
-            <TextBlock x:Name="Header" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="56" FontWeight="Bold" Height="100" Margin="216,0"/>
+        <StackPanel x:Name="Banner" Height="130" Background="Aqua" VerticalAlignment="Top">
+            <TextBlock x:Name="Header" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="72" FontWeight="Bold" Height="130" Margin="216,0"/>
         </StackPanel>
-
+        
+        <Grid>
+            <Button Content="Get Weather" Click="Current_Location" Height="60" Width="180" Margin="131,295,0,-295"/>
+        </Grid>
+        
         <!-- Icon that matches weather description -->
         <Image x:Name="Icon" Height="100" Width="100" HorizontalAlignment="Center"/>
 
         <!-- This textblock will print the location, temperature and weather -->
-        <TextBlock x:Name="ResultTextBlock" HorizontalAlignment="Center" FontSize="30" Foreground="White" />
-        <Button Content="Get Weather" Click="Current_Location" HorizontalAlignment="Center" VerticalAlignment="Center" Height="60" Width="180"/>
-
+        <TextBlock x:Name="TempTextBlock" HorizontalAlignment="Center" FontSize="60" Foreground="White" />
+        <TextBlock x:Name="CityTextBlock" HorizontalAlignment="Center" FontSize="36" Foreground="White" />
+        <TextBlock x:Name="DescTextBlock" HorizontalAlignment="Center" FontSize="36" Foreground="White" />
+        
     </StackPanel>
 </Page>

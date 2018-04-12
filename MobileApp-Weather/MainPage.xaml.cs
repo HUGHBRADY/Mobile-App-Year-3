@@ -37,7 +37,9 @@ namespace MobileApp_Weather
             Icon.Source = new BitmapImage(new Uri(icon, UriKind.Absolute));
 
             // Print city name, temperature and weather description from WeatherData.cs
-            ResultTextBlock.Text = myWeather.name + " - " + myWeather.main.temp + " - " + myWeather.weather[0].description;
+            TempTextBlock.Text = myWeather.main.temp + "°C";
+            CityTextBlock.Text = myWeather.name;
+            DescTextBlock.Text = myWeather.weather[0].description;
         }
     }
 }
