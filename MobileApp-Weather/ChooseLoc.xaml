@@ -5,7 +5,7 @@
     xmlns:local="using:MobileApp_Weather"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d" Loaded="Page_Loaded">
+    mc:Ignorable="d">
 
     <StackPanel x:Name="ShowWeather" Background="Aquamarine" Height="auto" Width="auto">
 
@@ -20,7 +20,7 @@
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*" />
-                    <ColumnDefinition Width="16*" />
+                    <ColumnDefinition Width="20*" />
                     <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
                 <!-- Return to main page -->
@@ -29,35 +29,58 @@
                               Grid.RowSpan="2" Grid.ColumnSpan="2" />
 
                 <!-- Title -->
-                <TextBlock x:Name="Header" Text="What's it like outside?" FontSize="36" 
+                <TextBlock x:Name="Header" Text="What's it like wherever?" FontSize="36" TextWrapping="Wrap" TextAlignment="Center"
                            HorizontalAlignment="Center" VerticalAlignment="Center"
                            FontWeight="Bold" Height="auto" Width="auto" Grid.Column="1" Grid.Row="1" />
             </Grid>
         </StackPanel>
-
-        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="645">
+        
+        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="160" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Enter Latitude:"  Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock Text="Enter Longtitude:"  Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+            <TextBox x:Name="Latitude" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="2" Grid.Column="1"/>
+            <TextBox x:Name="Longtitude" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="2" Grid.Column="3" />
+
+            <Button x:Name="CoordsButton"  Click="FindWeather_Click" Content="Find Weather" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="4" Grid.Column="2" Height="45" Width="120" Margin="-35,0,-35,0"/>
+        </Grid>
+        
+        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="510">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
                 <RowDefinition Height="4*"/>
                 <RowDefinition Height="3*"/>
                 <RowDefinition Height="3*"/>
-                <RowDefinition Height="3*"/>
-                <RowDefinition Height="9*"/>
+                <RowDefinition Height="4*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="3*"/>
                 <ColumnDefinition Width="6*"/>
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
-
-            <!-- Icon that matches weather description -->
+                        
             <Image x:Name="Icon" Height="100" Width="100" HorizontalAlignment="Center" 
-                   VerticalAlignment="Center" Grid.Row="1" Grid.Column="1"/>
+                   VerticalAlignment="Center" Grid.Row="0" Grid.Column="1"/>
 
-            <!-- This textblock will print the location, temperature and weather -->
-            <TextBlock x:Name="TempTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Foreground="White" Grid.Row="2" Grid.Column="1" />
-            <TextBlock x:Name="CityTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" Foreground="White" Grid.Row="3" Grid.Column="1" />
-            <TextBlock x:Name="DescTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" Foreground="White" Grid.Row="4" Grid.Column="1" />
+            <TextBlock x:Name="TempTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Foreground="White" Grid.Row="1" Grid.Column="1" />
+            <TextBlock x:Name="CityTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" Foreground="White" Grid.Row="2" Grid.Column="1" />
+            <TextBlock x:Name="DescTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" Foreground="White" Grid.Row="3" Grid.Column="1" />
 
         </Grid>
     </StackPanel>

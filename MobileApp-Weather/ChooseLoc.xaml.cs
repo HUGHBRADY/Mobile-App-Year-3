@@ -23,9 +23,9 @@ namespace MobileApp_Weather
             this.InitializeComponent();
         }
 
-        private async void Page_Loaded(object sender, RoutedEventArgs e)
+        private void FindWeather_Click(object sender, RoutedEventArgs e)
         {
-           
+
         }
 
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
@@ -33,5 +33,4 @@ namespace MobileApp_Weather
             Frame.Navigate(typeof(MainPage));
         }
     }
-
 }

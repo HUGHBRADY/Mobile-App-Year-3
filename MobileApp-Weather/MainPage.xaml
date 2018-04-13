@@ -22,11 +22,12 @@
                     <ColumnDefinition Width="16*" />
                     <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock x:Name="Header" Text="Rain or Shine?" FontSize="56" 
+                <TextBlock x:Name="Header" Text="Rain or Shine?" FontSize="56" TextWrapping="Wrap" TextAlignment="Center"
                            FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" />
             </Grid>
         </StackPanel>
 
+        <!-- Content -->
         <Grid HorizontalAlignment="Center" Height="640" Width="432">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>

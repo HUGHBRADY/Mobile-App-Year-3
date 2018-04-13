@@ -29,12 +29,13 @@
                               Grid.RowSpan="2" Grid.ColumnSpan="2" />
 
                 <!-- Title -->
-                <TextBlock x:Name="Header" Text="What's it like outside?" FontSize="36" 
+                <TextBlock x:Name="Header" Text="What's it like outside?" FontSize="36" TextWrapping="Wrap" TextAlignment="Center"
                            HorizontalAlignment="Center" VerticalAlignment="Center"
                            FontWeight="Bold" Height="auto" Width="auto" Grid.Column="1" Grid.Row="1" />
             </Grid>
         </StackPanel>
         
+        <!-- Content -->
         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="645">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
