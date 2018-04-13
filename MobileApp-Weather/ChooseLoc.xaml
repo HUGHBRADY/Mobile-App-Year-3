@@ -55,8 +55,8 @@
             <TextBlock Text="Enter Latitude:"  Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <TextBlock Text="Enter Longtitude:"  Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" />
 
-            <TextBox x:Name="Latitude" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="2" Grid.Column="1"/>
-            <TextBox x:Name="Longtitude" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="2" Grid.Column="3" />
+            <TextBox x:Name="Latbox" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="2" Grid.Column="1"/>
+            <TextBox x:Name="Lonbox" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="2" Grid.Column="3" />
 
             <Button x:Name="CoordsButton"  Click="FindWeather_Click" Content="Find Weather" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="4" Grid.Column="2" Height="45" Width="120" Margin="-35,0,-35,0"/>
         </Grid>
