@@ -48,7 +48,9 @@ namespace MobileApp_Weather
             }
             catch
             {
-                DescTextBlock.Text = "Unable to get weather.";
+                TempTextBlock.Text = " ";                
+                DescTextBlock.Text = " ";
+                CityTextBlock.Text = "Unable to get weather.";
             }
         }
 
