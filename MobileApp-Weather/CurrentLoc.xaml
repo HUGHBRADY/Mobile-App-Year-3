@@ -7,21 +7,58 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d" Loaded="Page_Loaded">
 
-    <!-- Basic code to check that data is being pulled from openweathermaps.org's API -->
     <StackPanel x:Name="ShowWeather" Background="Aquamarine" Height="auto" Width="auto">
 
         <!-- Banner -->
-        <StackPanel x:Name="Banner" Height="130" Background="Aqua" VerticalAlignment="Top">
-            <AppBarButton x:Name="Home" Icon="Back" Width="60"  Click="AppBarButton_Click"/>
-            <TextBlock x:Name="Header" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="72" FontWeight="Bold" Height="130" Margin="216,0"/>
+        <StackPanel x:Name="Banner" Height="120" Background="Aqua" VerticalAlignment="Top">
+
+            <Grid Height="120">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="6*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="16*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <!-- Return to main page -->
+                <AppBarButton x:Name="Home" Icon="Back" Click="AppBarButton_Click" Grid.Row="0" Grid.Column="0" 
+                              Height="50" Width="50" VerticalAlignment="Center" Margin="-2,-4,0,60"
+                              Grid.RowSpan="2" Grid.ColumnSpan="2" />
+
+                <!-- Title -->
+                <TextBlock x:Name="Header" Text="What's it like outside?" FontSize="36" 
+                           HorizontalAlignment="Center" VerticalAlignment="Center"
+                           FontWeight="Bold" Height="auto" Width="auto" Grid.Column="1" Grid.Row="1" />
+            </Grid>
         </StackPanel>
+        
+        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="645">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="9*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
 
-        <!-- Icon that matches weather description -->
-        <Image x:Name="Icon" Height="100" Width="100" HorizontalAlignment="Center"/>
+            <!-- Icon that matches weather description -->
+            <Image x:Name="Icon" Height="100" Width="100" HorizontalAlignment="Center" 
+                   VerticalAlignment="Center" Grid.Row="1" Grid.Column="1"/>
 
-        <!-- This textblock will print the location, temperature and weather -->
-        <TextBlock x:Name="TempTextBlock" HorizontalAlignment="Center" FontSize="60" Foreground="White" />
-        <TextBlock x:Name="CityTextBlock" HorizontalAlignment="Center" FontSize="36" Foreground="White" />
-        <TextBlock x:Name="DescTextBlock" HorizontalAlignment="Center" FontSize="36" Foreground="White" />
+            <!-- This textblock will print the location, temperature and weather -->
+            <TextBlock x:Name="TempTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Foreground="White" Grid.Row="2" Grid.Column="1" />
+            <TextBlock x:Name="CityTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" Foreground="White" Grid.Row="3" Grid.Column="1" />
+            <TextBlock x:Name="DescTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" Foreground="White" Grid.Row="4" Grid.Column="1" />
+            
+        </Grid>
     </StackPanel>
 </Page>

@@ -21,14 +21,16 @@ namespace MobileApp_Weather
         public MainPage()
         {
             this.InitializeComponent();
-
-            // Banner
-            Header.Text = "Rain or Shine";
         }
 
         private void CurrentLo_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(CurrentLoc));
+        }
+
+        private void ChooseLo_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(ChooseLoc));
         }
     }
 }

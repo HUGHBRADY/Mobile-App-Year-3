@@ -95,6 +95,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ChooseLoc.xaml.cs">
+      <DependentUpon>ChooseLoc.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CurrentLoc.xaml.cs">
       <DependentUpon>CurrentLoc.xaml</DependentUpon>
     </Compile>
@@ -144,6 +147,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="ChooseLoc.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CurrentLoc.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
