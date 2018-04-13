@@ -23,7 +23,7 @@ namespace MobileApp_Weather
             this.InitializeComponent();
 
             // Banner
-            Header.Text = "Rain or Shine";
+            Header.Text = "What's it like outside?";
         }
 
         private async void Page_Loaded(object sender, RoutedEventArgs e)

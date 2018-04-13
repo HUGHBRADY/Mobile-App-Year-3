@@ -13,7 +13,7 @@
         <!-- Banner -->
         <StackPanel x:Name="Banner" Height="130" Background="Aqua" VerticalAlignment="Top">
             <AppBarButton x:Name="Home" Icon="Back" Width="60"  Click="AppBarButton_Click"/>
-            <TextBlock x:Name="Header" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="72" FontWeight="Bold" Height="130" Margin="216,0"/>
+            <TextBlock x:Name="Header" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="72" FontWeight="Bold" Height="130" Margin="216,0"/>
         </StackPanel>
 
         <!-- Icon that matches weather description -->

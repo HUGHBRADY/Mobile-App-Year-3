@@ -11,12 +11,16 @@
 
         <!-- Banner -->
         <StackPanel x:Name="Banner" Height="130" Background="Aqua" VerticalAlignment="Top">
-            <TextBlock x:Name="Header" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="72" FontWeight="Bold" Height="130" Margin="216,0"/>
+            <TextBlock x:Name="Header" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="72" FontWeight="Bold" Height="130" Margin="216,0"/>
         </StackPanel>
-
-        <Grid>
-            <Button Content="Current Location" Click="CurrentLo_Click" Height="60" Width="180" Margin="124,451,0,-451"/>
+        <Grid HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="17*"/>
+                <RowDefinition Height="23*"/>
+            </Grid.RowDefinitions>
+            <Button Content="Current Location" Click="CurrentLo_Click" Height="90" Width="180" Margin="-90,30,0,0" Grid.RowSpan="2"/>
+            <Button Content="Find Weather" Click="CurrentLo_Click" Height="90" Width="180" Margin="115,30,-95,0" Grid.RowSpan="2"/>
         </Grid>
-        
+
     </StackPanel>
 </Page>
