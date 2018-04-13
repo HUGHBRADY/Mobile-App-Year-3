@@ -21,9 +21,6 @@ namespace MobileApp_Weather
         public CurrentLoc()
         {
             this.InitializeComponent();
-
-            // Banner
-            Header.Text = "What's it like outside?";
         }
 
         private async void Page_Loaded(object sender, RoutedEventArgs e)
@@ -34,7 +31,7 @@ namespace MobileApp_Weather
                 // Get the weather at the user's location
                 RootObject myWeather = await WeatherData.GetWeather(position.Coordinate.Point.Position.Latitude, position.Coordinate.Point.Position.Longitude);
 
-                // Icons taken from https://openweathermap.org/weather-conditions
+                // Insert matching icon
                 string icon = String.Format("ms-appx:///Assets/Icons/{0}.png", myWeather.weather[0].icon);
                 Icon.Source = new BitmapImage(new Uri(icon, UriKind.Absolute));
 
@@ -49,6 +46,7 @@ namespace MobileApp_Weather
             }
         }
 
+        // Return to MainPage
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(MainPage));

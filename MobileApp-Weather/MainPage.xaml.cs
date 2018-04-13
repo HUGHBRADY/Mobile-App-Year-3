@@ -23,11 +23,13 @@ namespace MobileApp_Weather
             this.InitializeComponent();
         }
 
+        // Go to CurrentLoc Page
         private void CurrentLo_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(CurrentLoc));
         }
 
+        // Go to ChooseLoc Page
         private void ChooseLo_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(ChooseLoc));

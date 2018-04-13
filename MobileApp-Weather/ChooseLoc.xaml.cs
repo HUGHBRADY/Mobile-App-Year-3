@@ -30,6 +30,7 @@ namespace MobileApp_Weather
         {
             try
             {
+                // Initialize variables with content in textboxes
                 lat = float.Parse(Latbox.Text);
                 lon = float.Parse(Lonbox.Text);
 
@@ -37,7 +38,7 @@ namespace MobileApp_Weather
                 // Get the weather at the user's location
                 RootObject myWeather = await WeatherData.GetWeather(lat, lon);
 
-                // Icons taken from https://openweathermap.org/weather-conditions
+                // Insert matching icon
                 string icon = String.Format("ms-appx:///Assets/Icons/{0}.png", myWeather.weather[0].icon);
                 Icon.Source = new BitmapImage(new Uri(icon, UriKind.Absolute));
 
@@ -54,7 +55,7 @@ namespace MobileApp_Weather
             }
         }
 
-        // Go back home
+        // Return to MainPage
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(MainPage));
